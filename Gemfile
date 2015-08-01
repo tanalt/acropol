@@ -10,7 +10,7 @@ gem 'rails-observers'
 gem 'roo'
 gem 'dbf'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 gem "bcrypt-ruby"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
@@ -52,5 +53,6 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'sqlite3'
 end
 
