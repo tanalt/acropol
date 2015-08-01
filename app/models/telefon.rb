@@ -5,7 +5,7 @@ class Telefon < ActiveRecord::Base
 
 
   def self.search(query)
-    if "#{query}".length>2
+    if "#{query}".length>4
       where("n_tel like ?", "%#{query}%")
     else
       where("n_tel like ?", "%00000%")
