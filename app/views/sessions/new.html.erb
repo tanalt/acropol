@@ -1,0 +1,19 @@
+
+  <h1>Вхід</h1>
+
+
+  <div class="row">
+    <div class="span6 offset3">
+      <%= form_for(:session, url: sessions_path) do |f| %>
+
+          <%= f.label :Логін %><br>
+          <%= f.text_field :name %><br>
+
+          <%= f.label :Пароль %><br>
+          <%= f.password_field :password %><br><br>
+
+          <%= f.submit "Ввійти", class: "btn btn-large btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>

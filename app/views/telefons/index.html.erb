@@ -1,0 +1,13 @@
+
+
+
+
+<h2>Імпортувати з EXEL</h2>
+
+<%= form_tag import_telefons_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Імпорт" , class: "btn btn-large btn-primary"%>
+<% end %>
+
+
+

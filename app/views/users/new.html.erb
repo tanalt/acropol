@@ -1,0 +1,16 @@
+
+  <h2>Новий користувач</h2>
+  <%= form_for @user do |f|%>
+      <%= render 'shared/error_messages' %>
+      <%= f.label :ПІБ %><br>
+      <%= f.text_field :fio %><br>
+      <%= f.label :Логін %><br>
+      <%= f.text_field :name %><br>
+      <%= f.label :Пароль %><br>
+      <%= f.password_field :password %><br>
+      <%= f.label :Підтвердження %><br>
+      <%= f.password_field :password_confirmation %><br><br>
+      <%= f.submit "Створити", class: "btn btn-large btn-primary" %>
+      <a href=<%=root_path%> class="btn btn-large btn-danger">Назад</a>
+
+  <% end %>

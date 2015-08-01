@@ -1,0 +1,25 @@
+<%=delete_path% + '/' + kl.id.to_s
+<%@us.each do |key,value|%>
+    <div class="container">
+      <div class="col-md-2"><%= key %></div>
+      <div class="col-md-2"><%= value %></div>
+    </div>
+
+<%end%>
+
+
+&current_user.privilege<=2 user_admin
+&current_user.privilege==1 admin
+
+              <% if user_adm? %>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Телефони <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                    <li><%= link_to "Додати", '#'  %></li>
+                    <li><%= link_to "Видалити", '#'  %></li>
+                    <li><%= link_to "Редагувати", '#' %></li>
+                </ul>
+              </li>
+              <%end%>

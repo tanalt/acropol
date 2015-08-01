@@ -1,0 +1,20 @@
+
+<div class="center hero-unit">
+
+<% if signed_in? %>
+  <br>
+  <%= form_tag find_tel_index_path, :method => :get, :remote => true do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Знайти", :n_tel => nil %>
+      </p>
+  <% end %>
+
+
+
+
+    <div id="telefons">
+        <%= render @telefons %>
+    </div>
+<%end%>
+</div>

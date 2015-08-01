@@ -1,0 +1,40 @@
+<header class="navbar-header navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <nav>
+        <ul class="nav navbar-nav pull-right">
+          <li><%= link_to "Пошук", root_path%></li>
+          <% if signed_in? %>
+              <li id="fat-menu" class="dropdown">
+                <% if admin? %>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Користувачі <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                      <li><%= link_to "Новий користувач", new_user_path  %></li>
+                      <li><%= link_to "Видалити/Редагувати", "/users/show"  %></li>
+                    </ul>
+                <%end%>
+                </li>
+              <% if user_adm? %>
+                  <li id="fat-menu" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Телефони <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                      <li><%= link_to "Додати", "/telefons/new"  %></li>
+                      <li><%= link_to "Імпортувати телефони з Еxel", telefons_path  %></li>
+                    </ul>
+                  </li>
+              <%end%>
+              <li><%= link_to "Вихід", signout_path, method: "delete"  %></li>
+
+          <% else %>
+              <li><%= link_to "Вхід", signin_path %></li>
+          <% end %>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

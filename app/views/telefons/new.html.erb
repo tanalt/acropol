@@ -1,0 +1,9 @@
+<h2>Новий телефон</h2>
+<%= form_for @tel do |f|%>
+    <%= render 'shared/error_messages_tel' %>
+    <%= f.label :"№ телефону" %><br>
+    <%= f.text_field :n_tel %><br>
+    <%= f.submit "Занести", class: "btn btn-large btn-primary" %>
+    <a href=<%=root_path%> class="btn btn-large btn-danger">Назад</a>
+
+<% end %>
