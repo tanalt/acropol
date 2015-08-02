@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'telefons/index'
   get 'find_tel/index'
   get "telefons/delete/:id", to: "telefons#delete"
+  get "users/password/:id", to: "users#password"
   get "users/delete/:id", to: "users#delete"
   get "users/find/:id", to: "users#find"
   get "users/new"

@@ -23,3 +23,16 @@
                 </ul>
               </li>
               <%end%>
+
+
+
+              <h2>Зміна паролю</h2>
+              <%= form_for @user do |f|%>
+                  <%= render 'shared/error_messages' %><%= f.label :Пароль %><br>
+                  <%= f.label :Логін %><br>
+                  <%= f.text_field :name, :value => @user.name %><br>
+                  <%= f.label :Підтвердження %><br>
+                  <%= f.password_field :password_confirmation %><br><br>
+                  <%= f.submit "Змінити", class: "btn btn-large btn-primary" %>
+                  <a href=<%=users_new_path%> class="btn btn-large btn-danger">Назад</a>
+              <% end %>

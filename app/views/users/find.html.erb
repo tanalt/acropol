@@ -5,10 +5,6 @@
     <%= f.text_field :fio, :value => @user.fio%><br>
     <%= f.label :Логін %><br>
     <%= f.text_field :name, :value => @user.name %><br>
-    <%= f.label :Пароль %><br>
-    <%= f.password_field :password %><br>
-    <%= f.label :Підтвердження %><br>
-    <%= f.password_field :password_confirmation %><br><br>
     <%= f.label :Доступ %><br>
     <%= f.radio_button :privilege, "1",  :checked => (@user.privilege==1)%>Адміністратор<br>
     <%= f.radio_button :privilege, 2, :checked => (@user.privilege==2)%>СуперКористувач<br>

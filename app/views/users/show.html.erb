@@ -4,7 +4,8 @@
     <div class="col-md-2"><%= kl.fio %></div>
     <div class="col-md-2"><%= kl.name %></div>
     <div class="col-md-2"><a href="/users/delete/<%=kl.id.to_s%>" class="btn btn-large btn-danger">Видалити</a></div>
-     <div class="col-md-2"><a href="/users/find/<%=kl.id.to_s%>" class="btn btn-large btn-success">Редагувати</a></div>
+    <div class="col-md-2"><a href="/users/find/<%=kl.id.to_s%>" class="btn btn-large btn-success">Редагувати</a></div>
+     <div class="col-md-2"><a href="/users/password/<%=kl.id.to_s%>" class="btn btn-large btn-warning">Змінити пароль</a></div>
    </div>
 
 <%end%>
