@@ -1,5 +1,5 @@
 class TelefonsController < ApplicationController
-
+  before_action :signed_in_user
 
   def import
     Telefon.import(params[:file])
@@ -30,6 +30,9 @@ class TelefonsController < ApplicationController
   private
   def tel_params
     params.require(:telefon).permit(:n_tel)
+  end
+  def signed_in_user
+    redirect_to signin_url, notice: "Будь-ласка, увійдіть" unless signed_in?
   end
 
 

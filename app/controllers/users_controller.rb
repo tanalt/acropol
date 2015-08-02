@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user
   def new
     @user=User.new
   end
@@ -77,6 +78,10 @@ class UsersController < ApplicationController
   end
   def user_params_pass
     params.require(:user).permit(:password, :password_confirmation)
+  end
+
+  def signed_in_user
+    redirect_to signin_url, notice: "Будь-ласка, увійдіть" unless signed_in?
   end
 
 end
