@@ -23,7 +23,7 @@ class Telefon < ActiveRecord::Base
       row = Hash[[header, spreadsheet.row(i)].transpose]
       telefon = find_by_id(row["id"]) || new
       telefon.attributes = row.to_hash.slice(*row.to_hash.keys)
-      telefon.save!
+      telefon.save
     end
   end
 
