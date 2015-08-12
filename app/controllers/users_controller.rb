@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user=User.find(params[:id])
     if @user.update_attributes(user_params_pass)
       redirect_to users_show_path
-      flash[:error]="Успішно відредаговано1"
+      flash[:error]="Успішно відредаговано"
     else
       render users_password_path
     end

@@ -1,0 +1,12 @@
+<h2>Редагувати</h2>
+<%= form_for @tel do |f|%>
+    <%= render 'shared/error_messages_tel' %>
+    <%= f.label :"№ телефону" %><br>
+    <%= f.text_field :n_tel, :value => @tel.n_tel %><br>
+    <%= f.text_field :fio, :value => @tel.fio %><br>
+    <%= f.text_field :name, :value => @tel.name %><br>
+    <%= f.select :coop, ['Співпраця не перевірена', 'Співпраця Заборонена', 'Співпраця ризикована', 'Співпраця можлива', 'Співпраця рекомендована'], :selected => @tel.coop %><br>
+    <%= f.submit "Занести", class: "btn btn-large btn-primary" %>
+    <a href=<%=root_path%> class="btn btn-large btn-danger">Назад</a>
+
+<% end %>

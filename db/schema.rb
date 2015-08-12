@@ -11,12 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730214803) do
+ActiveRecord::Schema.define(version: 20150812104738) do
 
   create_table "telefons", force: :cascade do |t|
     t.string   "n_tel"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "fio"
+    t.string   "name"
+    t.string   "coop"
+    t.string   "color"
   end
 
   add_index "telefons", ["n_tel"], name: "index_telefons_on_n_tel", unique: true

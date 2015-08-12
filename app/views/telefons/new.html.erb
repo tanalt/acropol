@@ -3,6 +3,9 @@
     <%= render 'shared/error_messages_tel' %>
     <%= f.label :"№ телефону" %><br>
     <%= f.text_field :n_tel %><br>
+    <%= f.text_field :fio %><br>
+    <%= f.text_field :name %><br>
+    <%= f.select :coop, ['Співпраця не перевірена', 'Співпраця Заборонена', 'Співпраця ризикована', 'Співпраця можлива', 'Співпраця рекомендована'], :selected => 'Співпраця не перевірена' %><br>
     <%= f.submit "Занести", class: "btn btn-large btn-primary" %>
     <a href=<%=root_path%> class="btn btn-large btn-danger">Назад</a>
 
