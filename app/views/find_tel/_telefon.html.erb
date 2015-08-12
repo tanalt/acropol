@@ -1,6 +1,6 @@
 <% @telefons.each do|telefon|%>
 <div class="container">
-  <div class="col-md-2"><%= telefon.n_tel%></div>
+  <div class="col-md-2"><h3><%= telefon.n_tel%></h3></div>
   <% if user_adm? %>
     <div class="col-md-2"><a href="/telefons/delete/<%=telefon.id.to_s%>" class="btn btn-large btn-danger">Видалити</a></div>
   <%end%>
