@@ -3,7 +3,7 @@
   <div class="col-md-2"><h4><%= telefon.n_tel%></h4></div>
   <div class="col-md-2"><h4><%= telefon.fio%></h4></div>
   <div class="col-md-2"><h4><%= telefon.name%></h4></div>
-  <div class="col-md-2 warning"><h4><div class="<%=telefon.color%>"><%= telefon.coop%></div></h4></div>
+  <div class="col-md-2 warning"><h4><div class="<%=telefon.color%>"><%= telefon.coop||"Співпраця не перевірена" %></div></h4></div>
 
   <% if user_adm? %>
     <div class="col-md-2"><a href="/telefons/delete/<%=telefon.id.to_s%>" class="btn btn-large btn-danger">Видалити</a></div>
