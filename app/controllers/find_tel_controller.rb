@@ -20,7 +20,7 @@ class FindTelController < ApplicationController
     redirect_to signin_url, notice: "Будь-ласка, увійдіть" unless signed_in?
   end
   def check_activivty
-    user = User.find_by(params[:id])
+    user = User.find_by_id(current_user.id)
     user.activity=Time.now
     user.save
   end
