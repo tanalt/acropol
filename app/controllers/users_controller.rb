@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user
+  before_action :signed_in_user, :check_activivty
   def new
     @user=User.new
   end
@@ -65,7 +65,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users=User.all
+    if params[:id]=="show_act"
+      @users=User.where("activity>'#{Time.now-60}'")
+    else
+      @users=User.all
+    end
   end
 
   private
@@ -82,6 +86,11 @@ class UsersController < ApplicationController
 
   def signed_in_user
     redirect_to signin_url, notice: "Будь-ласка, увійдіть" unless signed_in?
+  end
+  def check_activivty
+    user = User.find_by(current_user.id)
+    user.activity=Time.now
+    user.save
   end
 
 end

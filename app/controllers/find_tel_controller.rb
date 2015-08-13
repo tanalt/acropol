@@ -1,5 +1,5 @@
 class FindTelController < ApplicationController
-  before_action :signed_in_user
+  before_action :signed_in_user, :check_activivty
   def index
     @telefons = Telefon.search(params[:search])
   end
@@ -18,6 +18,11 @@ class FindTelController < ApplicationController
   private
   def signed_in_user
     redirect_to signin_url, notice: "Будь-ласка, увійдіть" unless signed_in?
+  end
+  def check_activivty
+    user = User.find_by(params[:id])
+    user.activity=Time.now
+    user.save
   end
 
 end

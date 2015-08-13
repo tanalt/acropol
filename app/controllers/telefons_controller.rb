@@ -1,5 +1,5 @@
 class TelefonsController < ApplicationController
-  before_action :signed_in_user
+  before_action :signed_in_user, :check_activivty
 
   def import
     Telefon.import(params[:file])
@@ -74,7 +74,11 @@ class TelefonsController < ApplicationController
   def signed_in_user
     redirect_to signin_url, notice: "Будь-ласка, увійдіть" unless signed_in?
   end
-
+  def check_activivty
+    user = User.find_by(params[:id])
+    user.activity=Time.now
+    user.save
+  end
 
 
 end

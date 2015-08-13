@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "users/find/:id", to: "users#find"
   get "telefons/edit/:id", to: "telefons#edit"
   get "users/new"
+  get "users/show_act"
   get "users/show"
   root 'find_tel#index'
   match '/signin',  to: 'sessions#new',         via: 'get'

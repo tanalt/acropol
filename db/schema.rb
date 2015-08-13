@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812104738) do
+ActiveRecord::Schema.define(version: 20150813104107) do
 
   create_table "telefons", force: :cascade do |t|
     t.string   "n_tel"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150812104738) do
     t.datetime "updated_at",      null: false
     t.string   "remember_token"
     t.string   "fio"
+    t.datetime "activity"
   end
 
   add_index "users", ["name"], name: "index_users_on_name", unique: true

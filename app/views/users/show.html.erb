@@ -1,11 +1,27 @@
 <br>
+<% if params[:id]=='show_act'%>
+<h2>Зараз онлайн</h2>
+<%end%>
 <%@users.each do |kl|%>
    <div class="container">
     <div class="col-md-2"><%= kl.fio %></div>
     <div class="col-md-2"><%= kl.name %></div>
-    <div class="col-md-2"><a href="/users/delete/<%=kl.id.to_s%>" class="btn btn-large btn-danger">Видалити</a></div>
-    <div class="col-md-2"><a href="/users/find/<%=kl.id.to_s%>" class="btn btn-large btn-success">Редагувати</a></div>
-    <div class="col-md-2"><a href="/users/password/<%=kl.id.to_s%>" class="btn btn-large btn-warning">Змінити пароль</a></div>
+     <div class="col-md-2"><%= case kl.privilege
+                                 when 1
+                                    "Адміністратор"
+                                 when 2
+                                     "Суперкористувач"
+                                 when 3
+                                    "Користувач"
+                                 end%>
+     </div>
+     <% if params[:id]=='show'%>
+        <div class="col-md-2"><a href="/users/delete/<%=kl.id.to_s%>" class="btn btn-large btn-danger">Видалити</a></div>
+        <div class="col-md-2"><a href="/users/find/<%=kl.id.to_s%>" class="btn btn-large btn-success">Редагувати</a></div>
+        <div class="col-md-2"><a href="/users/password/<%=kl.id.to_s%>" class="btn btn-large btn-warning">Змінити пароль</a></div>
+     <%else%>
+         <div class="col-md-2"><%= kl.activity %></div>
+     <%end%>
    </div>
 
 <%end%>
