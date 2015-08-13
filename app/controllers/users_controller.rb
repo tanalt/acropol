@@ -66,7 +66,7 @@ class UsersController < ApplicationController
 
   def show
     if params[:id]=="show_act"
-      @users=User.where("activity>'#{Time.now-60}'")
+      @users=User.where("activity>'#{Time.now-60*20}'")
     else
       @users=User.all
     end
