@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, :check_activivty
+  before_action :signed_in_user
   def new
     @user=User.new
   end
