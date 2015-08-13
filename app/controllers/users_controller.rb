@@ -87,10 +87,6 @@ class UsersController < ApplicationController
   def signed_in_user
     redirect_to signin_url, notice: "Будь-ласка, увійдіть" unless signed_in?
   end
-  def check_activivty
-    user = User.find_by(current_user.id)
-    user.activity=Time.now
-    user.save
-  end
+
 
 end
