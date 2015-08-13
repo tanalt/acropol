@@ -89,6 +89,7 @@ class UsersController < ApplicationController
   end
   def check_activivty
     user = User.where("id=#{current_user.id}")
+    user.activity=Time.now
     user.save
   end
 
