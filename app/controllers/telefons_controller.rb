@@ -1,6 +1,13 @@
 class TelefonsController < ApplicationController
   before_action :signed_in_user, :check_activivty
 
+  def export
+    headers['Content-Type'] = "application/vnd.ms-excel"
+    headers['Content-Disposition'] = 'attachment; filename="report.xls"'
+    headers['Cache-Control'] = ''
+    @users = Telefon.all
+  end
+
   def import
     Telefon.import(params[:file])
     redirect_to root_url, notice: "Успішно імпортовано"
@@ -10,11 +17,14 @@ class TelefonsController < ApplicationController
     @tel=Telefon.find_by_id(params[:id])
   end
   def update
+
     @tel=Telefon.find_by_id(params[:id])
     case tel_params[:coop]
       when "Співпраця не перевірена"
         @tel.color="grey"
-      when "Співпраця Заборонена"
+      when "Співпраця заборонена повністю"
+        @tel.color="red"
+      when "Співпраця по обєктах акрополя заборонена"
         @tel.color="red"
       when "Співпраця ризикована"
         @tel.color="orange"
@@ -48,7 +58,9 @@ class TelefonsController < ApplicationController
     case tel_params[:coop]
       when "Співпраця не перевірена"
         @tel.color="grey"
-      when "Співпраця Заборонена"
+      when "Співпраця заборонена повністю"
+        @tel.color="red"
+      when "Співпраця по обєктах акрополя заборонена"
         @tel.color="red"
       when "Співпраця ризикована"
         @tel.color="orange"

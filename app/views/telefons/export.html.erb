@@ -1,0 +1,14 @@
+<%= link_to "Export as Excel", telefons_export_url %>
+
+
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @users.each do |u| %>
+      <tr>
+        <td><%= u.n_tel %></td><td><%= u.fio %></td><td><%= u.name %></td><td><%= u.coop %></td>
+  <% end %>
+  </tr>
+</table>

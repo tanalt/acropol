@@ -21,11 +21,15 @@ module SessionsHelper
   end
 
   def admin?
-    current_user.privilege==1
+    if !current_user.nil?
+      current_user.privilege==1
+    end
   end
 
   def user_adm?
-    current_user.privilege<=2
+    if !current_user.nil?
+      current_user.privilege<=2
+    end
   end
 
   def sign_out

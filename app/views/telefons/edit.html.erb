@@ -9,8 +9,8 @@
     <%= f.text_field :name, :value => @tel.name %><br>
     <%= f.label :"№ телефону" %><br>
     <%= f.label :"Ступінь співпраці" %><br>
-    <%= f.select :coop, ['Співпраця не перевірена', 'Співпраця Заборонена', 'Співпраця ризикована', 'Співпраця можлива', 'Співпраця рекомендована'], :selected => @tel.coop %><br>
-    <%= f.submit "Занести", class: "btn btn-large btn-primary" %>
+    <%= f.select :coop, ['Співпраця не перевірена', 'Співпраця по обєктах акрополя заборонена', 'Співпраця заборонена повністю', 'Співпраця ризикована', 'Співпраця можлива', 'Співпраця рекомендована'], :selected => @tel.coop %><br>
+    <%= f.submit "Змінити", class: "btn btn-large btn-primary" %>
     <a href=<%=root_path%> class="btn btn-large btn-danger">Назад</a>
 
 <% end %>

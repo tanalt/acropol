@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "telefons/export"
   resources :telefons do
     collection { post :import }
   end

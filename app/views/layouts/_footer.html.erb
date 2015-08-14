@@ -1,3 +1,23 @@
 <footer class="footer">
+  <% if admin? %>
+  <h3>Зараз онлайн</h3>
+  <%@users=show_act%>
+  <%@users.each do |kl|%>
+      <div class="container">
+        <div class="col-md-2"><%= kl.fio %></div>
+        <div class="col-md-2"><%= kl.name %></div>
+        <div class="col-md-2"><%= case kl.privilege
+                                    when 1
+                                      "Адміністратор"
+                                    when 2
+                                      "Суперкористувач"
+                                    when 3
+                                      "Користувач"
+                                  end%>
+        </div>
+        <div class="col-md-2"><%= kl.activity %></div>
+      </div>
 
+  <%end%>
+  <%end%>
 </footer>
