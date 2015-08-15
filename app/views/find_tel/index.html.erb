@@ -2,11 +2,12 @@
 <div class="center hero-unit">
 
 <% if signed_in? %>
+
   <br>
-  <%= form_tag find_tel_index_path, :method => :get, :remote => true do %>
+  <%= form_tag find_tel_index_path, :method => :get, :remote => true, :autocomplete => "off" do %>
       <p>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Знайти", :n_tel => nil %>
+        <%= text_field_tag :search, params[:search], :onkeyup => "this.form.sub.click()"%>
+        <%= submit_tag "Знайти", :n_tel => nil, :name => "sub"%>
       </p>
   <% end %>
 
