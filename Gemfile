@@ -8,7 +8,9 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'rails-observers'
 gem 'roo'
-gem 'dbf'
+gem "spreadsheet", "0.6.5.8"
+gem "to_xls", :git => "https://github.com/dblock/to_xls.git", :branch => "to-xls-on-models"
+
 # Use sqlite3 as the database for Active Record
 
 gem "bcrypt-ruby"
