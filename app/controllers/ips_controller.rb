@@ -1,22 +1,30 @@
-class FindTelController < ApplicationController
+class IpsController < ApplicationController
   before_action :signed_in_user, :check_activivty, :check_ip
   def index
-    @ip=request.remote_ip
-    @telefons = Telefon.search(params[:search])
-  end
-  def show
-    @telefon = Telefon.where("n_tel like? %#{params[:search]}%")
-  end
-
-  def destroy
-    Telefon.find(params[:id]).destroy
-    redirect_to "/find_tel/index"
+    @ip=Ip.all
   end
   def delete
-    @tel=Telefon.find_by_id(params[:id])
-
+    @us=Ip.find_by_id(params[:id])
+  end
+  def destroy
+    Ip.find(params[:id]).destroy
+    redirect_to "/ips/index"
+  end
+  def new
+    @ip=Ip.new
+  end
+  def create
+    @ip=Ip.new(ip_params)
+    if @ip.save
+      redirect_to ips_index_path
+    else
+      render 'new'
+    end
   end
   private
+  def ip_params
+    params.require(:ip).permit(:ip)
+  end
   def signed_in_user
     redirect_to signin_url, notice: "Будь-ласка, увійдіть" unless signed_in?
   end

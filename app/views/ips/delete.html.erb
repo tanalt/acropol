@@ -1,0 +1,14 @@
+<h2>Видалити IP-адресу</h2>
+
+<div class="container">
+  <div class="col-md-2"><%= @us.ip %></div>
+</div>
+<div class="container">
+  <div class="col-md-2">
+    <%= link_to "Видалити", @us, method: :delete, :class => "btn btn-large btn-danger",
+                data: { confirm: "You sure?" } %>
+  </div>
+  <div class="col-md-2">
+    <a href=<%=users_show_path%> class="btn btn-large btn-primary">Відмінити</a>
+  </div>
+</div>

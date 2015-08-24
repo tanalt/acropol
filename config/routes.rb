@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'ips/index'
+
   get "telefons/export"
   resources :telefons do
     collection { post :import }
@@ -6,11 +8,13 @@ Rails.application.routes.draw do
   resources :telefons
   resources :find_tel
   resources :users
+  resources :ips
   resources :sessions, only: [:new, :create, :destroy]
   get 'telefons/index'
   get 'find_tel/index'
   get "telefons/delete/:id", to: "telefons#delete"
   get "users/password/:id", to: "users#password"
+  get "ips/delete/:id", to: "ips#delete"
   get "users/delete/:id", to: "users#delete"
   get "users/find/:id", to: "users#find"
   get "telefons/edit/:id", to: "telefons#edit"

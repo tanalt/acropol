@@ -1,0 +1,10 @@
+
+  <h2>Нова ІР адреса</h2>
+  <%= form_for @ip do |f|%>
+      <%= render 'shared/error_messages_ip' %>
+      <%= f.label :"IP адреса" %><br>
+      <%= f.text_field :ip %><br>
+      <%= f.submit "Занести", class: "btn btn-large btn-primary" %>
+      <a href=<%=ips_index_path%> class="btn btn-large btn-danger">Назад</a>
+
+  <% end %>

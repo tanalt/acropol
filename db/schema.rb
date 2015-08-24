@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813104107) do
+ActiveRecord::Schema.define(version: 20150824085914) do
+
+  create_table "ips", force: :cascade do |t|
+    t.string   "ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.string   "kod_rajonu"
+    t.integer  "kilk_kimn"
+    t.string   "planuvannya"
+    t.string   "rozd_proh"
+    t.string   "poverh"
+    t.float    "vart_na_r"
+    t.float    "vart_start"
+    t.float    "komis"
+    t.string   "vulycia"
+    t.string   "bud"
+    t.string   "plosha"
+    t.string   "vikna"
+    t.string   "opalennya"
+    t.string   "stan_kv"
+    t.string   "santeh"
+    t.string   "pidloga"
+    t.string   "vilna"
+    t.string   "orenda"
+    t.string   "foto"
+    t.string   "vlasnyk"
+    t.string   "exlusiv"
+    t.integer  "user_excl"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "telefons", force: :cascade do |t|
     t.string   "n_tel"

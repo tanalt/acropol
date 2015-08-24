@@ -1,5 +1,5 @@
 class TelefonsController < ApplicationController
-  before_action :signed_in_user, :check_activivty
+  before_action :signed_in_user, :check_activivty, :check_ip
 
   def export
     headers['Content-Type'] = "application/vnd.ms-excel"
@@ -91,6 +91,10 @@ class TelefonsController < ApplicationController
     user.activity=Time.now
     user.save
   end
-
+  def check_ip
+    if Ip.find_by_ip(request.remote_ip).nil?&!admin?
+      redirect_to signin_url, notice: "Зайти неможливо"
+    end
+  end
 
 end

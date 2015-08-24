@@ -1,0 +1,11 @@
+<h2>ІР адреси, з яких можна заходити</h2>
+<%@ip.each do |ip|%>
+    <div class="container">
+      <div class="col-md-2"><%= ip.ip %></div>
+      <div class="col-md-2"><a href="/ips/delete/<%=ip.id.to_s%>" class="btn btn-large btn-danger">Видалити</a></div>
+    </div>
+<%end%>
+<div class="container">
+  <div class="col-md-2"><a href="/ips/new/" class="btn btn-large btn-primary">Додати IP адресу</a></div>
+</div>
+

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, :check_activivty
+  before_action :signed_in_user, :check_activivty, :check_ip
   def new
     @user=User.new
   end
@@ -91,6 +91,11 @@ class UsersController < ApplicationController
     user = User.find_by_id(current_user.id)
     user.activity=Time.now
     user.save
+  end
+  def check_ip
+    if Ip.find_by_ip(request.remote_ip).nil?&!admin?
+      redirect_to signin_url, notice: "Зайти неможливо"
+    end
   end
 
 end

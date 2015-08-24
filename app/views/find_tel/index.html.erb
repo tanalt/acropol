@@ -5,7 +5,7 @@
 
 
   <br>
-      <%=@ip%>
+
   <%= form_tag find_tel_index_path, :method => :get, :remote => true, :autocomplete => "off" do %>
       <p>
         <%= text_field_tag :search, params[:search], :onkeyup => "this.form.sub.click()"%>
