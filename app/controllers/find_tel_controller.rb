@@ -1,6 +1,7 @@
 class FindTelController < ApplicationController
   before_action :signed_in_user, :check_activivty
   def index
+    @ip=request.remote_ip
     @telefons = Telefon.search(params[:search])
   end
   def show

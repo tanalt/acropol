@@ -1,4 +1,4 @@
- function show(){
+function show(){
      document.getElementsByName("commit").click();
  }
 
