@@ -1,0 +1,13 @@
+
+<% if params.keys.include?("sub")||params.keys.include?("find")%>
+
+    <%= form_tag sales_find_vul_path, :method => :get, :remote => true, :autocomplete => "off" do %>
+        <%= text_field_tag :filtr, params[:filtr], :onkeyup => "this.form.find.click()", :autocomplete => "off" %>
+        <%= submit_tag "Знайти", :vulycia => nil, :name => "find"%>
+    <%end%>
+    <%= form_tag sales_index_path, :method => :get, :remote => true, :autocomplete => "off" do %>
+        <div id="vul"><%=render "vul"%></div>
+        <%= submit_tag "Застосувати", :vulycia => nil, :name => "ok"%>
+    <%end%>
+
+<%end%>

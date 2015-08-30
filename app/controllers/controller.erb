@@ -1,0 +1,52 @@
+if params[:find]=="Знайти"
+@vulycias=Sale.where("lower(vulycia) like ?", "%#{params[:filtr].downcase}%").uniq
+else
+if params[:sub]=="Вулиця"
+@vulycias=Sale.select("vulycia").uniq
+filt=true
+@vul_send=params[:vul_send]
+else
+@vulycias=Sale.search(params[:search])
+
+end
+
+
+if !@vul_send.nil?
+@vul_filtr=@vul_send.split(":")
+end
+
+
+if params.keys.include?("ok")
+params.each do |key, value|
+if key.include?("vulycia")
+if @vul_filtr.nil?
+@vul_filtr=[value]
+else
+@vul_filtr.push(value)
+end
+end
+end
+if !@vul_filtr.nil?
+@vul_send=@vul_filtr.join(":")
+end
+@sales = Sale.where(vulycia: @vul_filtr)
+else
+@sales = Sale.search(params[:filtr])
+end
+end
+
+
+@vulycias.each do |vulycia|
+if !@vul_filtr.nil?
+@check=@vul_filtr.include?(vulycia.vulycia)
+else
+@check=false
+end
+
+if @vulycias_vivod.nil?
+@vulycias_vivod={vulycia.vulycia => @check}
+else
+@vulycias_vivod[vulycia.vulycia] = @check
+end
+end
+

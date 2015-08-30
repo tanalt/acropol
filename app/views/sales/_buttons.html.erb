@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="col-md-2">
+        <%= hidden_field_tag "vul_send", @vul_send %>
+        <%= submit_tag "Скинути всі фільтpи", :name => "delete_all"%>
+    </div>
+</div>
+<div class="container">
+    <div class="col-md-2">
+        <%= submit_tag "Вулиця", :name => "vul_find", :class =>"btn btn-large btn-success"%>
+        <% if !cookies[:vul_send].nil? %>
+            <%= submit_tag "x", :name => "delete_vul" %>
+        <%end%>
+    </div>
+    <div class="col-md-2">
+        <%= submit_tag "Код району", :name => "kod_rajonu" , :class =>"btn btn-large btn-success" %>
+        <% if !cookies[:kod_rajonu_send].nil? %>
+            <%= submit_tag "x", :name => "delete_kod_rajonu"%>
+        <%end%>
+    </div>
+    <div class="col-md-2">
+        <%= submit_tag "Кількість кімнат", :name => "kilk_kimn", :class =>"btn btn-large btn-success" %>
+        <% if !cookies[:kilk_kimn_send].nil? %>
+            <%= submit_tag "x", :name => "delete_kilk_kimn"%>
+        <%end%>
+    </div>
+    <div class="col-md-2">
+        <%= submit_tag "Planuvannia", :name => "planuvannya", :class =>"btn btn-large btn-success" %>
+        <% if !cookies[:planuvannya_send].nil? %>
+            <%= submit_tag "x", :name => "delete_planuvannya"%>
+        <%end%>
+    </div>
+    <div class="col-md-2">
+        <%= submit_tag "rozd_proh", :name => "rozd_proh", :class =>"btn btn-large btn-success" %>
+        <% if !cookies[:rozd_proh_send].nil? %>
+            <%= submit_tag "x", :name => "delete_rozd_proh"%>
+        <%end%>
+    </div>
+  <div class="col-md-2">
+    <%= submit_tag "poverh", :name => "poverh", :class =>"btn btn-large btn-success" %>
+    <% if !cookies[:poverh_send].nil? %>
+        <%= submit_tag "x", :name => "delete_poverh"%>
+    <%end%>
+  </div>
+</div>
+
+
+

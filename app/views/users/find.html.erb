@@ -6,11 +6,13 @@
     <%= f.label :Логін %><br>
     <%= f.text_field :name, :value => @user.name %><br>
     <%= f.label :Доступ %><br>
-    <%= f.radio_button :privilege, "1",  :checked => (@user.privilege==1)%>Адміністратор<br>
-    <%= f.radio_button :privilege, 2, :checked => (@user.privilege==2)%>СуперКористувач<br>
-    <%= f.radio_button :privilege, 3, :checked => (@user.privilege==3)%>Користувач<br>
+    <%= f.radio_button :privilege, 1,  :checked => (@user.privilege==1)%>Адміністратор<br>
+    <%= f.radio_button :privilege, 2, :checked => (@user.privilege==2)%>Суперкористувач  - продажа<br>
+    <%= f.radio_button :privilege, 3, :checked => (@user.privilege==3)%>Користувач - продажа<br>
+    <%= f.radio_button :privilege, 4, :checked => (@user.privilege==4)%>Cуперкористувач оренда<br>
+    <%= f.radio_button :privilege, 5, :checked => (@user.privilege==5)%>Користувач<br>
     <br>
-    <%= f.submit "Змінити", class: "btn btn-large btn-primary" %>
+    <%= f.submit "Змінити", :class => "btn btn-large btn-primary" %>
     <a href="/users/show" class="btn btn-large btn-danger">Назад</a>
 
 <% end %>

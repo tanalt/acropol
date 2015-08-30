@@ -1,0 +1,8 @@
+<%if !@vulycias_vivod.nil? %>
+    <% i=1%>
+    <% @vulycias_vivod.each do |key, value| %>
+        <%= check_box_tag :"vulycia#{i}", key, value %>
+        <%= label_tag :"#{key}" %><br>
+        <% i=i+1%>
+    <%end%>
+<%end%>

@@ -10,8 +10,13 @@ Rails.application.routes.draw do
   resources :users
   resources :ips
   resources :sessions, only: [:new, :create, :destroy]
+  post 'sales/index'
+  post 'sales/filtr'
+  get 'sales/index'
   get 'telefons/index'
   get 'find_tel/index'
+  post "sales/find_vul"
+  get "sales/find_vul"
   get "telefons/delete/:id", to: "telefons#delete"
   get "users/password/:id", to: "users#password"
   get "ips/delete/:id", to: "ips#delete"

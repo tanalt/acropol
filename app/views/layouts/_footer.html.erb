@@ -1,5 +1,7 @@
 <footer class="footer">
   <% if admin? %>
+      <%#User.where("activity>'#{Time.now-60*20}'")%>
+      <%=Time.now-60*20%>
   <h3>Зараз онлайн</h3>
   <%@users=show_act%>
   <%@users.each do |kl|%>

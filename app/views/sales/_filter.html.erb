@@ -1,0 +1,70 @@
+
+
+
+
+<% if params.keys.include?("vul_find")||params.keys.include?("find")%>
+
+<%= form_tag sales_find_vul_path, :method => :post, :remote => true, :autocomplete => "off" do %>
+<%= text_field_tag :filtr, params[:filtr], :onkeyup => "this.form.find.click()", :autocomplete => "off" %>
+<%= submit_tag "Знайти", :vulycia => nil, :name => "find"%>
+<%end%>
+<%= form_tag sales_index_path, :method => :post, :remote => true, :autocomplete => "off" do %>
+<div id="vul"><%=render "vul"%></div>
+<%= submit_tag "Застосувати", :vulycia => nil, :name => "ok"%>
+
+
+    <%end%>
+
+<%end%>
+<% if params.keys.include?("kod_rajonu")||params.keys.include?("find")%>
+
+<%= form_tag sales_index_path, :method => :get, :remote => true, :autocomplete => "off" do %>
+<% i=1%>
+<% @kod_rajonu_vivod.each do |key, value| %>
+<%= check_box_tag :"kod_rajonu#{i}", key, value %>
+<%= label_tag :"#{key}" %><br>
+<% i=i+1%>
+<%end%>
+<%= submit_tag "Застосувати", :vulycia => nil, :name => "ok"%>
+<%end%>
+
+<%end%>
+<% if params.keys.include?("kilk_kimn")||params.keys.include?("find")%>
+<%= form_tag sales_index_path, :method => :get, :remote => true, :autocomplete => "off" do %>
+<% i=1%>
+<% @kilk_kimn_vivod.each do |key, value| %>
+<%= check_box_tag :"kilk_kimn#{i}", key, value %>
+<%= label_tag :"#{key}" %><br>
+<% i=i+1%>
+<%end%>
+<%= submit_tag "Застосувати", :vulycia => nil, :name => "ok"%>
+<%end%>
+
+<%end%>
+<% if params.keys.include?("planuvannya")||params.keys.include?("find")%>
+    <%= form_tag sales_index_path, :method => :get, :remote => true, :autocomplete => "off" do %>
+        <% i=1%>
+        <% @planuvannya_vivod.each do |key, value| %>
+            <%= check_box_tag :"planuvannya#{i}", key, value %>
+            <%= label_tag :"#{key}" %><br>
+            <% i=i+1%>
+        <%end%>
+        <%= submit_tag "Застосувати", :vulycia => nil, :name => "ok"%>
+    <%end%>
+<%end%>
+<% if params.keys.include?("rozd_proh")||params.keys.include?("find")%>
+    <%= form_tag sales_index_path, :method => :get, :remote => true, :autocomplete => "off" do %>
+        <% i=1%>
+        <% @rozd_proh_vivod.each do |key, value| %>
+            <%= check_box_tag :"rozd_proh#{i}", key, value %>
+            <%= label_tag :"#{key}" %><br>
+            <% i=i+1%>
+        <%end%>
+        <%= submit_tag "Застосувати", :vulycia => nil, :name => "ok"%>
+    <%end%>
+<%end%>
+
+
+
+
+<%=@change%>

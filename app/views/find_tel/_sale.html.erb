@@ -1,0 +1,10 @@
+<% if @sales.count>0%>
+    <% @sales.each do|telefon|%>
+        <div class="container">
+          <div class="col-md-2"><h4><%= telefon.vlasnyk%></h4></div>
+
+        </div>
+    <%end%>
+<%else %>
+    <div class="col-md-6"><h4><div class="yellow"> Нічого не знайдено</div></h4></div>
+<%end%>

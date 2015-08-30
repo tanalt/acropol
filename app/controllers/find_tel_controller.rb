@@ -3,6 +3,8 @@ class FindTelController < ApplicationController
   def index
     @ip=request.remote_ip
     @telefons = Telefon.search(params[:search])
+    @sales = Sale.search(params[:search])
+    @params = params
   end
   def show
     @telefon = Telefon.where("n_tel like? %#{params[:search]}%")

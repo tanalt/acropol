@@ -1,0 +1,26 @@
+
+
+
+<%= form_tag action: "index", method: "post", remote: true do %>
+    <% i=1%>
+    <% if !@vulycias_vivod.nil? %>
+        <% if !@vul_send.nil?%>
+          <%  @vul_filtr=@vul_send.split(":")%>
+        <%    end%>
+        <% @vulycias_vivod.each do |key, value| %>
+            <% if !@vul_filtr.nil?%>
+                <%@check=@vul_filtr.include?(key) %>
+            <%else%>
+                <%@check=false%>
+            <%end%>
+            <%= check_box_tag :"vulycia#{i}", key, @check %>
+            <%= label_tag :"#{key}" %><br>
+            <% i=i+1%>
+        <%end%>
+    <%end%>
+    <% if params.keys.include?("sub")%>
+        <%= submit_tag "Застосувати", :vulycia => nil, :name => "ok"%>
+    <%end%>
+
+
+<% end %>

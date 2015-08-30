@@ -26,11 +26,22 @@ module SessionsHelper
     end
   end
 
-  def user_adm?
+  def user_adm_orenda?
     if !current_user.nil?
       current_user.privilege<=2
     end
   end
+  def user_orenda?
+    if !current_user.nil?
+      current_user.privilege<=3
+    end
+  end
+  def user_adm?
+    if !current_user.nil?
+      current_user.privilege<=4
+    end
+  end
+
 
   def sign_out
     current_user.update_attribute(:remember_token,

@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 gem 'bootstrap-sass'
+gem 'unicode_utils'
+gem 'bootstrap-modal-rails'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'rails-observers'
@@ -48,7 +50,7 @@ end
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'debugger'
+  #gem 'debugger'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

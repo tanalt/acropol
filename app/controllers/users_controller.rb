@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
   def create
     @user=User.new(user_params)
-    @user.privilege=3
+    @user.privilege=5
     if @user.save
       redirect_to users_show_path
     else
