@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150824085914) do
 
   create_table "ips", force: :cascade do |t|
@@ -19,9 +18,6 @@ ActiveRecord::Schema.define(version: 20150824085914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-=======
-ActiveRecord::Schema.define(version: 20150819064353) do
->>>>>>> add_new_base
 
   create_table "sales", force: :cascade do |t|
     t.string   "kod_rajonu"
@@ -45,9 +41,12 @@ ActiveRecord::Schema.define(version: 20150819064353) do
     t.string   "foto"
     t.string   "vlasnyk"
     t.string   "exlusiv"
+    t.string   "n_tel_vlasn"
+    t.string   "rezult_prozv"
     t.integer  "user_excl"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "kontrol"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "telefons", force: :cascade do |t|

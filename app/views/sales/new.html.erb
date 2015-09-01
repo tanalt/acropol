@@ -1,0 +1,131 @@
+
+<h2>Новий користувач</h2>
+<%= form_for @sale do |f|%>
+    <%= render 'shared/error_messages_sale' %>
+    <div class="container">
+      <div class="col-md-6 text-center">
+        <%= f.label :"Код району"%><br>
+        <%= f.select :kod_rajonu, options_for_select([["Центр","Ц"], ["Клокучка", "КЛ"], ["Калічанка", "КА"], ["Фастівська", "Ф"],
+                   ["Гравітон", "Г"], ["Садгора", "С"], ["Паркова зона", "ПЗ"], ["Пентагон", "ПЕ"], ["Цент-Барбюса-Гагаріна", "ЦБ"],
+                   ["Роша", "Р"], ["Роша Стинка", "РС"], ["Проспект-Червоноармійська-Майда", "П"], ["Комарова-Бульвар-Південно-кільцева верх", "КБ"],
+                   ["Південно-кільцева низ-дослідна-онколікарня", "ПК"], ["Будівельників-Винниченка", "БД"]
+                            ]
+                                )  %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Кількість кімнат" %><br>
+        <%= f.select :kilk_kimn, options_for_select([["1"], ["1.5"], ["2"], ["3"], ["4"], ["5"], ["6"], ["7"], ["8"], ["9"], ["10"], ["11"], ["12"]])%>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Планування" %><br>
+        <%= f.select :planuvannya, options_for_select([["Панелька","ПАН"], ["Чешка", "ЧЕШ"], ["Новобудова", "НОВ"], ["Спецпроект", "СПЕЦ"],
+                                                      ["Хрущовка", "ХРУЩ"], ["ЛЮКС", "Л"], ["Румунський люкс", "Л"], ["Австрійський люкс", "АЛ"],
+                                                      ["В будинку", "ВБУД"], ["Таунхауз", "ТХ"], ["Комуналка", "КОМУН"], ["Гуртожиток", "ГУРТ"],
+                                                      ["Хостел", "ХОСТ"], ["Старий фонд", "СФ"], ["Київка", "КИЇВ"], ["Гостинка", "ГОСТ"],
+                                                      ["Коттедж", "КОТТ"], ["Обкомівка", "ОБКО"]
+                                                     ]
+                                )  %><br>
+
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-3 ">
+        <%= f.label :"Розд/Прох"%><br>
+        <%= f.select :rozd_proh, options_for_select([["Роздільні","Р"], ["Прохідні", "П"], ["Pоздільно-прохідні", "РП"], ["По кругу", "К"]])  %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Поверх"%><br>
+        <%= f.password_field :poverh %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Варт на Р"%><br>
+        <%= f.password_field :vart_na_r %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Варт Старт"%><br>
+        <%= f.password_field :vart_start %><br>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-3">
+        <%= f.label :"Комісійні"%><br>
+        <%= f.password_field :komis %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Вулиця"%><br>
+        <%= f.password_field :vulycia %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"№ буд кв"%><br>
+        <%= f.password_field :bud %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Площа м2"%><br>
+        <%= f.password_field :plosha %><br>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-3">
+        <%= f.label :"Вікна"%><br>
+        <%= f.password_field :vikna %><br>
+      </div>
+      <div class="col-md-3">
+        <%=f.label :"Опалення"%><br>
+        <%= f.password_field :opalennya %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Стан квартири"%><br>
+        <%= f.password_field :stan_kv %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Стан СУ, сантехніка"%><br>
+        <%= f.password_field :santeh %><br>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-3">
+        <%= f.label :"підлога / інше"%><br>
+        <%= f.password_field :pidloga %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Вільна/Зайнята"%><br>
+        <%= f.password_field :vilna %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Оренда (Так/Ні)"%><br>
+        <%= f.password_field :orenda %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Фото"%><br>
+        <%= f.password_field :foto %><br>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-3">
+        <%= f.label :"Власник"%><br>
+        <%= f.password_field :vlasnyk %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"№ тел власника"%><br>
+        <%= f.password_field :n_tel_vlasn %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"результат прозвону"%><br>
+        <%= f.password_field :rezult_prozv %><br>
+      </div>
+      <div class="col-md-3">
+        <%= f.label :"Ексклюзив ріелтора"%><br>
+        <%= f.password_field :user_excl %><br>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-3">
+        <%= f.label :"Хто приймав/контроль"%><br>
+        <%= f.password_field :kontrol %>
+      </div>
+    </div>
+    <br><br>
+        <%= f.submit "Створити", class: "btn btn-large btn-primary" %>
+        <a href=<%=root_path%> class="btn btn-large btn-danger">Назад</a>
+
+<% end %>

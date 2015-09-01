@@ -22,7 +22,11 @@ class CreateSales < ActiveRecord::Migration
       t.string :foto
       t.string :vlasnyk
       t.string :exlusiv
+      t.string :n_tel_vlasn
+      t.string :rezult_prozv
       t.integer :user_excl
+      t.string :kontrol
+
 
 
       t.timestamps null: false

@@ -5,7 +5,7 @@
         <ul class="nav navbar-nav pull-right">
           <% if signed_in? %>
               <%if user_orenda?%>
-                  <li><%= link_to "Пошук продажі", sales_index_path%></li>
+                  <li><%= link_to "Пошук продажі", sales_index_url%></li>
               <%end%>
               <li><%= link_to "Пошук оренда", root_path%></li>
               <li id="fat-menu" class="dropdown">
@@ -21,6 +21,16 @@
                     </ul>
                 <%end%>
                 </li>
+              <% if user_adm_orenda? %>
+                  <li id="fat-menu" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Basa prodaj <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                      <li><%= link_to "Додати", "/sales/new"  %></li>
+                    </ul>
+                  </li>
+              <%end%>
               <% if user_adm? %>
                   <li id="fat-menu" class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">

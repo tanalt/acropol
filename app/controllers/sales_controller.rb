@@ -1,5 +1,14 @@
 class SalesController < ApplicationController
   before_action :signed_in_user, :check_activivty
+  def show
+    @sales=Sale.all
+  end
+  def new
+    @sale=Sale.new
+  end
+  def create
+    @sale=Sale.new
+  end
   def find_vul
     if params.keys.include?("find")
       cookies[:vul_send]=""

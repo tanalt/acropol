@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :telefons
   resources :find_tel
   resources :users
+  resources :sales, :only => [:new, :create]
   resources :ips
   resources :sessions, only: [:new, :create, :destroy]
   post 'sales/index'
   post 'sales/filtr'
+  get 'sales/new'
   get 'sales/index'
   get 'telefons/index'
   get 'find_tel/index'
